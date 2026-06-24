@@ -1,6 +1,5 @@
 ---
 import '../styles/global.css';
-import UtilityBar from '../components/UtilityBar.tsx';
 import Nav from '../components/Nav.tsx';
 import Funding from '../components/Funding.tsx';
 import Footer from '../components/Footer.tsx';
@@ -28,7 +27,6 @@ const { title, active } = Astro.props;
   </head>
   <body>
     <div style="font-family: 'Libre Franklin', sans-serif; color: #1a1614; background: #ffffff;">
-      <UtilityBar />
       <Nav active={active} />
       <slot />
       <Funding />

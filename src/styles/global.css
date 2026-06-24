@@ -18,7 +18,6 @@ html, body { overflow-x: hidden; }
 /* mobile menu controls — hidden on desktop, revealed in the media query */
 .nav-toggle { display: none; }
 .nav-burger { display: none; }
-.u-short { display: none; }
 
 /* ============================================================
    MOBILE — the page is built with desktop inline styles, so the
@@ -46,18 +45,6 @@ html, body { overflow-x: hidden; }
 
   /* hero text column: drop the big asymmetric padding */
   [style*="72px 56px"] { padding: 44px 20px 40px !important; }
-
-  /* top bar: one centered line of abbreviated text */
-  .utilbar {
-    justify-content: center !important;
-    gap: 10px !important;
-    font-size: 9.5px !important;
-    letter-spacing: 0.08em !important;
-    padding: 8px 16px !important;
-    text-align: center !important;
-  }
-  .u-full { display: none !important; }
-  .u-short { display: inline !important; }
 
   /* nav: collapse links into a hamburger dropdown (CSS-only, no JS) */
   .navbar { padding: 14px 20px !important; }
@@ -105,6 +92,40 @@ html, body { overflow-x: hidden; }
   /* wide benchmark table scrolls horizontally instead of overflowing */
   .tscroll { overflow-x: auto !important; -webkit-overflow-scrolling: touch; }
   .tscroll table { min-width: 620px; }
+
+  /* ---- tighter vertical rhythm: less empty space between sections ---- */
+  [style*="1200px"], [style*="1100px"], [style*="1080px"], [style*="1000px"] {
+    padding-top: 54px !important;
+    padding-bottom: 54px !important;
+  }
+  /* hero image: shorter so it isn't a giant block above the fold */
+  [style*="min-height: 520px"] { min-height: 320px !important; }
+
+  /* ---- mobile type scale: consistent, readable sizes for all content ---- */
+  h1 { font-size: clamp(26px, 7vw, 34px) !important; line-height: 1.14 !important; }
+  h2 { font-size: clamp(21px, 5.6vw, 27px) !important; }
+  h3 { font-size: clamp(18px, 4.8vw, 22px) !important; }
+
+  /* shrink the oversized display numbers */
+  [style*="font-size:42px"], [style*="font-size: 42px"] { font-size: 31px !important; }
+  [style*="font-size:34px"], [style*="font-size: 34px"] { font-size: 28px !important; }
+  [style*="font-size:32px"], [style*="font-size: 32px"] { font-size: 27px !important; }
+
+  /* body copy → one comfortable reading size (≈16px) */
+  [style*="font-size: 17.5px"], [style*="font-size:17.5px"],
+  [style*="font-size: 17px"], [style*="font-size:17px"],
+  [style*="font-size: 16.5px"], [style*="font-size:16.5px"],
+  [style*="font-size: 16px"], [style*="font-size:16px"],
+  [style*="font-size: 15.5px"], [style*="font-size:15.5px"] {
+    font-size: 16px !important;
+    line-height: 1.62 !important;
+  }
+  /* small captions/labels → nudge up for legibility */
+  [style*="font-size: 14.5px"], [style*="font-size:14.5px"],
+  [style*="font-size: 14px"], [style*="font-size:14px"],
+  [style*="font-size: 13.5px"], [style*="font-size:13.5px"] {
+    font-size: 14.5px !important;
+  }
 }
 
 @media (max-width: 480px) {
