@@ -1,0 +1,205 @@
+---
+import Base from '../layouts/Base.astro';
+import { href } from '../components/tokens';
+const base = import.meta.env.BASE_URL;
+const img = (f: string) => `${base}assets/${f}`;
+---
+<Base title={'SARA·Detect — Detecting Subacute Ruminal Acidosis with Real-Time Deep Learning'} active="home">
+  <!-- ===================== HERO ===================== -->
+    <section style="border-bottom: 1px solid #e7e3dd;">
+      <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.16fr 0.84fr;">
+        <div style="padding: 72px 56px 68px 40px;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #9a1b2a; font-weight: 600; margin-bottom: 24px;">USDA-NIFA Final Project Report</div>
+          <h1 style="font-family: 'Spectral', serif; font-weight: 700; font-size: 52px; line-height: 1.07; color: #1a1614; margin: 0 0 24px; letter-spacing: -0.015em;">Detecting Subacute Ruminal Acidosis with a Real-Time Deep Learning Algorithm</h1>
+          <p style="font-size: 17px; line-height: 1.62; color: #56504b; margin: 0 0 36px; max-width: 540px;">A precision-livestock platform that reads cattle rumen gas emissions through optical gas imaging — turning thermal video into an early, non-invasive signal of digestive health.</p>
+          <div style="display: flex; gap: 14px; margin-bottom: 48px;">
+            <a class="btn-primary" href={href("research")} style="background: #6e0f1a; color: #fff; font-size: 14.5px; font-weight: 600; padding: 14px 28px; border-radius: 8px;">Explore the research →</a>
+            <a class="btn-secondary" href={href("publications")} style="background: #fff; color: #6e0f1a; font-size: 14.5px; font-weight: 600; padding: 14px 28px; border-radius: 8px; border: 1.5px solid #d8b3b0;">View publications</a>
+          </div>
+          <div style="display: flex; gap: 44px; border-top: 1px solid #e7e3dd; padding-top: 26px;">
+            <div><div style="font-family:'Spectral',serif; font-weight:700; font-size:32px; color:#6e0f1a;">92.98<span style="font-size:17px;">%</span></div><div style="font-size:12.5px; color:#847a72; margin-top:3px;">mIoU · plume segmentation</div></div>
+            <div><div style="font-family:'Spectral',serif; font-weight:700; font-size:32px; color:#6e0f1a;">3</div><div style="font-size:12.5px; color:#847a72; margin-top:3px;">peer-reviewed papers</div></div>
+            <div><div style="font-family:'Spectral',serif; font-weight:700; font-size:32px; color:#6e0f1a;">2</div><div style="font-size:12.5px; color:#847a72; margin-top:3px;">SIU departments</div></div>
+          </div>
+        </div>
+        <div style="position: relative; min-height: 520px;">
+          <img src={img("field-ogi-cow.png")} alt="Field OGI data collection with cattle" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block;">
+          <div style="position: absolute; left: 18px; bottom: 18px; background: rgba(26,22,20,0.84); color: #f4ede9; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.07em; padding: 8px 13px; border-radius: 6px;">FIELD CAPTURE · OGI THERMAL CAMERAS · SIU FARM</div>
+        </div>
+      </div>
+      <div style="height: 7px; background: linear-gradient(90deg,#1a0a2e,#5b1670,#b1267a,#e8590c,#f9c80e);"></div>
+    </section>
+
+    <!-- ===================== OVERVIEW / CHALLENGE ===================== -->
+    <section style="background: #f7f5f2;">
+      <div style="max-width: 1200px; margin: 0 auto; padding: 88px 40px; display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 72px; align-items: start;">
+        <div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #9a1b2a; font-weight: 600; margin-bottom: 18px;">The Challenge</div>
+          <h2 style="font-family: 'Spectral', serif; font-weight: 700; font-size: 38px; line-height: 1.12; color: #1a1614; margin: 0 0 8px; letter-spacing: -0.01em;">A costly disorder that hides in plain sight.</h2>
+        </div>
+        <div>
+          <p style="font-size: 17px; line-height: 1.65; color: #443e3a; margin: 0 0 22px;">Subacute ruminal acidosis (SARA) is one of the most common and economically damaging metabolic disorders in dairy and beef cattle. It depresses feed efficiency, milk yield, and animal welfare — yet it produces few outward clinical signs, making it notoriously difficult to detect on the farm.</p>
+          <p style="font-size: 17px; line-height: 1.65; color: #443e3a; margin: 0 0 30px;">Conventional diagnosis relies on invasive rumen pH sampling. Our project asks a different question: <strong style="color:#6e0f1a; font-weight:600;">what if the rumen's own gas emissions could reveal its health — captured at a distance, in real time, with a camera?</strong></p>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div style="background: #fff; border: 1px solid #e7e3dd; border-radius: 12px; padding: 22px 24px;">
+              <div style="font-family:'Spectral',serif; font-weight:700; font-size:26px; color:#6e0f1a; margin-bottom:6px;">Non-invasive</div>
+              <div style="font-size:14px; line-height:1.5; color:#6b635c;">No probes, no boluses — gas plumes are imaged at a distance with optical gas cameras.</div>
+            </div>
+            <div style="background: #fff; border: 1px solid #e7e3dd; border-radius: 12px; padding: 22px 24px;">
+              <div style="font-family:'Spectral',serif; font-weight:700; font-size:26px; color:#6e0f1a; margin-bottom:6px;">Real-time</div>
+              <div style="font-size:14px; line-height:1.5; color:#6b635c;">Lightweight models run on edge hardware at video frame rates for live monitoring.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== APPROACH PIPELINE ===================== -->
+    <section style="max-width: 1200px; margin: 0 auto; padding: 88px 40px 76px;">
+      <div style="text-align: center; margin-bottom: 52px;">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #9a1b2a; font-weight: 600; margin-bottom: 16px;">The Approach</div>
+        <h2 style="font-family: 'Spectral', serif; font-weight: 700; font-size: 38px; line-height: 1.12; color: #1a1614; margin: 0 auto; max-width: 760px; letter-spacing: -0.01em;">From a breath of gas to a health signal — in four steps.</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 1px solid #e7e3dd; border-radius: 14px; overflow: hidden;">
+        <div style="padding: 34px 28px; border-right: 1px solid #e7e3dd;">
+          <div style="font-family:'JetBrains Mono',monospace; font-size: 13px; color:#9a1b2a; font-weight:600; margin-bottom: 18px;">01</div>
+          <h3 style="font-family:'Spectral',serif; font-weight:600; font-size:21px; color:#1a1614; margin:0 0 10px;">Capture</h3>
+          <p style="font-size:14.5px; line-height:1.55; color:#6b635c; margin:0;">Optical gas imaging cameras record thermal video of cattle, visualizing exhaled CO₂ and methane as plumes.</p>
+        </div>
+        <div style="padding: 34px 28px; border-right: 1px solid #e7e3dd;">
+          <div style="font-family:'JetBrains Mono',monospace; font-size: 13px; color:#9a1b2a; font-weight:600; margin-bottom: 18px;">02</div>
+          <h3 style="font-family:'Spectral',serif; font-weight:600; font-size:21px; color:#1a1614; margin:0 0 10px;">Segment</h3>
+          <p style="font-size:14.5px; line-height:1.55; color:#6b635c; margin:0;">Lightweight neural networks isolate gas plumes from noisy thermal backgrounds, pixel by pixel.</p>
+        </div>
+        <div style="padding: 34px 28px; border-right: 1px solid #e7e3dd;">
+          <div style="font-family:'JetBrains Mono',monospace; font-size: 13px; color:#9a1b2a; font-weight:600; margin-bottom: 18px;">03</div>
+          <h3 style="font-family:'Spectral',serif; font-weight:600; font-size:21px; color:#1a1614; margin:0 0 10px;">Quantify</h3>
+          <p style="font-size:14.5px; line-height:1.55; color:#6b635c; margin:0;">Plume size, density, and dynamics are measured as proxies for rumen fermentation activity.</p>
+        </div>
+        <div style="padding: 34px 28px;">
+          <div style="font-family:'JetBrains Mono',monospace; font-size: 13px; color:#9a1b2a; font-weight:600; margin-bottom: 18px;">04</div>
+          <h3 style="font-family:'Spectral',serif; font-weight:600; font-size:21px; color:#1a1614; margin:0 0 10px;">Classify</h3>
+          <p style="font-size:14.5px; line-height:1.55; color:#6b635c; margin:0;">Vision-language models flag SARA risk, joining segmentation with health classification.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== KEY RESULTS / METRICS ===================== -->
+    <section style="background: #1a1614; color: #f4ede9;">
+      <div style="max-width: 1200px; margin: 0 auto; padding: 80px 40px;">
+        <div style="display: flex; justify-content: space-between; align-items: end; margin-bottom: 44px; flex-wrap: wrap; gap: 20px;">
+          <div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #f9c80e; font-weight: 600; margin-bottom: 16px;">Key Results</div>
+            <h2 style="font-family: 'Spectral', serif; font-weight: 700; font-size: 38px; line-height: 1.1; color: #fff; margin: 0; letter-spacing: -0.01em;">Accurate, lightweight, and fast<br>enough for the field.</h2>
+          </div>
+          <a href={href("research")} style="font-family:'JetBrains Mono',monospace; font-size: 13px; color:#f9c80e; border-bottom: 1px solid #f9c80e; padding-bottom: 3px;">See full benchmarks →</a>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: #322a25; border: 1px solid #322a25; border-radius: 14px; overflow: hidden;">
+          <div style="background:#1a1614; padding: 32px 28px;"><div style="font-family:'Spectral',serif; font-weight:700; font-size:42px; color:#f9c80e; line-height:1;">92.98<span style="font-size:22px;">%</span></div><div style="font-size:13.5px; color:#b6aaa0; margin-top:12px; line-height:1.45;">mIoU for CO₂ plume segmentation (CarboFormer)</div></div>
+          <div style="background:#1a1614; padding: 32px 28px;"><div style="font-family:'Spectral',serif; font-weight:700; font-size:42px; color:#f9c80e; line-height:1;">84.68</div><div style="font-size:13.5px; color:#b6aaa0; margin-top:12px; line-height:1.45;">frames per second — real-time on edge hardware</div></div>
+          <div style="background:#1a1614; padding: 32px 28px;"><div style="font-family:'Spectral',serif; font-weight:700; font-size:42px; color:#f9c80e; line-height:1;">5.07<span style="font-size:22px;">M</span></div><div style="font-size:13.5px; color:#b6aaa0; margin-top:12px; line-height:1.45;">parameters — a compact, deployable model</div></div>
+          <div style="background:#1a1614; padding: 32px 28px;"><div style="font-family:'Spectral',serif; font-weight:700; font-size:42px; color:#f9c80e; line-height:1;">97.00<span style="font-size:22px;">%</span></div><div style="font-size:13.5px; color:#b6aaa0; margin-top:12px; line-height:1.45;">overall accuracy on real cattle recordings</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PUBLICATIONS PREVIEW ===================== -->
+    <section style="max-width: 1200px; margin: 0 auto; padding: 88px 40px 76px;">
+      <div style="display: flex; justify-content: space-between; align-items: end; margin-bottom: 44px; flex-wrap: wrap; gap: 20px;">
+        <div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #9a1b2a; font-weight: 600; margin-bottom: 16px;">Publications</div>
+          <h2 style="font-family: 'Spectral', serif; font-weight: 700; font-size: 38px; line-height: 1.1; color: #1a1614; margin: 0; letter-spacing: -0.01em;">Three papers, one growing system.</h2>
+        </div>
+        <a href={href("publications")} style="font-family:'JetBrains Mono',monospace; font-size: 13px; color:#6e0f1a; border-bottom: 1px solid #6e0f1a; padding-bottom: 3px;">All publications →</a>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;">
+        <!-- paper 1 -->
+        <div class="paper" style="border: 1px solid #e7e3dd; border-radius: 14px; padding: 30px 28px; background:#fff; display: flex; flex-direction: column;">
+          <div style="display:flex; gap:8px; margin-bottom:20px;">
+            <span style="font-family:'JetBrains Mono',monospace; font-size:10.5px; letter-spacing:0.06em; background:#f7ecec; color:#6e0f1a; padding:5px 9px; border-radius:5px; font-weight:600;">ISVC 2025</span>
+            <span style="font-family:'JetBrains Mono',monospace; font-size:10.5px; letter-spacing:0.06em; background:#f2efe9; color:#847a72; padding:5px 9px; border-radius:5px;">SPRINGER</span>
+          </div>
+          <h3 style="font-family:'Spectral',serif; font-weight:600; font-size:21px; line-height:1.25; color:#1a1614; margin:0 0 12px;">CarboFormer</h3>
+          <p style="font-size:14.5px; line-height:1.55; color:#6b635c; margin:0 0 18px; flex:1;">A lightweight semantic segmentation architecture for CO₂ detection using optical gas imaging.</p>
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#9a8f86; border-top:1px solid #eceae6; padding-top:14px;">Islam · Sarker · Embaby · Ahmed · AbuGhazaleh</div>
+        </div>
+        <!-- paper 2 -->
+        <div class="paper" style="border: 1px solid #e7e3dd; border-radius: 14px; padding: 30px 28px; background:#fff; display: flex; flex-direction: column;">
+          <div style="display:flex; gap:8px; margin-bottom:20px;">
+            <span style="font-family:'JetBrains Mono',monospace; font-size:10.5px; letter-spacing:0.06em; background:#f7ecec; color:#6e0f1a; padding:5px 9px; border-radius:5px; font-weight:600;">WACV 2026</span>
+            <span style="font-family:'JetBrains Mono',monospace; font-size:10.5px; letter-spacing:0.06em; background:#f2efe9; color:#847a72; padding:5px 9px; border-radius:5px;">WORKSHOP</span>
+          </div>
+          <h3 style="font-family:'Spectral',serif; font-weight:600; font-size:21px; line-height:1.25; color:#1a1614; margin:0 0 12px;">FUME</h3>
+          <p style="font-size:14.5px; line-height:1.55; color:#6b635c; margin:0 0 18px; flex:1;">A fused, unified multi-gas emission network jointly segmenting CO₂ and methane from livestock rumen.</p>
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#9a8f86; border-top:1px solid #eceae6; padding-top:14px;">HARVEST-Vision · IEEE/CVF</div>
+        </div>
+        <!-- paper 3 -->
+        <div class="paper" style="border: 1px solid #e7e3dd; border-radius: 14px; padding: 30px 28px; background:#fff; display: flex; flex-direction: column;">
+          <div style="display:flex; gap:8px; margin-bottom:20px;">
+            <span style="font-family:'JetBrains Mono',monospace; font-size:10.5px; letter-spacing:0.06em; background:#fff7e8; color:#b07a00; padding:5px 9px; border-radius:5px; font-weight:600;">UNDER REVIEW</span>
+            <span style="font-family:'JetBrains Mono',monospace; font-size:10.5px; letter-spacing:0.06em; background:#f2efe9; color:#847a72; padding:5px 9px; border-radius:5px;">SMART AG. TECH.</span>
+          </div>
+          <h3 style="font-family:'Spectral',serif; font-weight:600; font-size:21px; line-height:1.25; color:#1a1614; margin:0 0 12px;">VLMDual</h3>
+          <p style="font-size:14.5px; line-height:1.55; color:#6b635c; margin:0 0 18px; flex:1;">A vision-language distillation framework for joint classification and plume segmentation in SARA detection.</p>
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#9a8f86; border-top:1px solid #eceae6; padding-top:14px;">Vision-Language · Distillation</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== METHODOLOGY / EXPERIMENTAL SETUP ===================== -->
+    <section style="background: #f7f5f2; border-top: 1px solid #e7e3dd;">
+      <div style="max-width: 1200px; margin: 0 auto; padding: 88px 40px;">
+        <div style="display: flex; justify-content: space-between; align-items: end; margin-bottom: 44px; flex-wrap: wrap; gap: 20px;">
+          <div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #9a1b2a; font-weight: 600; margin-bottom: 16px;">Experimental Setup</div>
+            <h2 style="font-family: 'Spectral', serif; font-weight: 700; font-size: 38px; line-height: 1.1; color: #1a1614; margin: 0; letter-spacing: -0.01em;">From controlled chambers to live cattle.</h2>
+          </div>
+          <a href={href("research")} style="font-family:'JetBrains Mono',monospace; font-size: 13px; color:#6e0f1a; border-bottom: 1px solid #6e0f1a; padding-bottom: 3px;">Inside the methodology →</a>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;">
+          <div style="background:#fff; border: 1px solid #e7e3dd; border-radius: 14px; overflow: hidden;">
+            <img src={img("lab-gas-chamber.png")} alt="Controlled gas release chamber" style="width:100%; height: 220px; object-fit: cover; display:block;">
+            <div style="padding: 24px 24px 28px;">
+              <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.1em; color:#9a1b2a; margin-bottom:10px;">CONTROLLED RELEASE</div>
+              <h3 style="font-family:'Spectral',serif; font-weight:600; font-size:20px; color:#1a1614; margin:0 0 8px;">Calibrated gas chamber</h3>
+              <p style="font-size:14px; line-height:1.55; color:#6b635c; margin:0;">FLIR OGI cameras image known CO₂ releases in an insulated chamber, building a clean, labeled training corpus.</p>
+            </div>
+          </div>
+          <div style="background:#fff; border: 1px solid #e7e3dd; border-radius: 14px; overflow: hidden;">
+            <img src={img("invitro-fermentation.png")} alt="In-vitro rumen fermentation system" style="width:100%; height: 220px; object-fit: cover; display:block;">
+            <div style="padding: 24px 24px 28px;">
+              <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.1em; color:#9a1b2a; margin-bottom:10px;">IN-VITRO FERMENTATION</div>
+              <h3 style="font-family:'Spectral',serif; font-weight:600; font-size:20px; color:#1a1614; margin:0 0 8px;">Rumen in a bottle</h3>
+              <p style="font-size:14px; line-height:1.55; color:#6b635c; margin:0;">ANKOM gas-production arrays simulate rumen fermentation, linking measured gas output to acidosis conditions.</p>
+            </div>
+          </div>
+          <div style="background:#fff; border: 1px solid #e7e3dd; border-radius: 14px; overflow: hidden;">
+            <img src={img("field-ogi-cow.png")} alt="Field data collection with cattle" style="width:100%; height: 220px; object-fit: cover; display:block;">
+            <div style="padding: 24px 24px 28px;">
+              <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.1em; color:#9a1b2a; margin-bottom:10px;">FIELD DEPLOYMENT</div>
+              <h3 style="font-family:'Spectral',serif; font-weight:600; font-size:20px; color:#1a1614; margin:0 0 8px;">Live cattle, real barns</h3>
+              <p style="font-size:14px; line-height:1.55; color:#6b635c; margin:0;">Models fine-tuned on recordings of cattle at the SIU farm, validating performance in real conditions.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== WORKSHOP / OUTREACH ===================== -->
+    <section style="max-width: 1200px; margin: 0 auto; padding: 88px 40px;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid #e7e3dd; border-radius: 16px; overflow: hidden;">
+        <div style="position: relative; min-height: 360px;">
+          <img src={img("workshop-presentation.png")} alt="AI in Animal Science Workshop" style="position:absolute; inset:0; width:100%; height:100%; object-fit: cover; display:block;">
+        </div>
+        <div style="padding: 56px 52px; display: flex; flex-direction: column; justify-content: center;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #9a1b2a; font-weight: 600; margin-bottom: 18px;">Outreach</div>
+          <h2 style="font-family: 'Spectral', serif; font-weight: 700; font-size: 32px; line-height: 1.15; color: #1a1614; margin: 0 0 16px; letter-spacing: -0.01em;">Artificial Intelligence in Animal Science Workshop</h2>
+          <p style="font-size: 16px; line-height: 1.62; color: #56504b; margin: 0 0 26px;">Hosted by the Department of Animal Science at SIU Carbondale on March 18, 2026, the workshop shared this work with students, researchers, and the agricultural community — bridging computer vision and livestock science.</p>
+          <div style="display:flex; gap: 28px; font-family:'JetBrains Mono',monospace; font-size: 12px; color:#847a72;">
+            <span><span style="color:#6e0f1a; font-weight:600;">DATE</span> &nbsp;Mar 18, 2026</span>
+            <span><span style="color:#6e0f1a; font-weight:600;">HOST</span> &nbsp;Dept. of Animal Science, SIU</span>
+          </div>
+        </div>
+      </div>
+    </section>
+</Base>

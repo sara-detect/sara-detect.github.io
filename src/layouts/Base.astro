@@ -1,0 +1,38 @@
+---
+import '../styles/global.css';
+import UtilityBar from '../components/UtilityBar.tsx';
+import Nav from '../components/Nav.tsx';
+import Funding from '../components/Funding.tsx';
+import Footer from '../components/Footer.tsx';
+import type { PageKey } from '../components/tokens';
+
+interface Props {
+  title: string;
+  active: PageKey;
+}
+const { title, active } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800&family=Libre+Franklin:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div style="font-family: 'Libre Franklin', sans-serif; color: #1a1614; background: #ffffff;">
+      <UtilityBar />
+      <Nav active={active} />
+      <slot />
+      <Funding />
+      <Footer />
+    </div>
+  </body>
+</html>

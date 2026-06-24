@@ -1,0 +1,12 @@
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #ffffff; }
+a { text-decoration: none; color: inherit; }
+
+/* hover states (ported from the .dc.html design template) */
+.navlink:hover { color: #6e0f1a; }
+.flink:hover { color: #fff !important; }
+.maroonlink:hover { color: #520a12 !important; }
+.btn-primary:hover { background: #520a12 !important; }
+.btn-secondary:hover { background: #f7ecec !important; }
+.card:hover { border-color: #d8b3b0 !important; }
