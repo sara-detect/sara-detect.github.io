@@ -25,7 +25,6 @@ export const NAV = [
   { route: 'research', label: 'Research', key: 'research' },
   { route: 'publications', label: 'Publications', key: 'publications' },
   { route: 'team', label: 'Team', key: 'team' },
-  { route: 'gallery', label: 'Gallery', key: 'gallery' },
 ] as const;
 
 export type PageKey = (typeof NAV)[number]['key'];
