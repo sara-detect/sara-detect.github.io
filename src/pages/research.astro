@@ -3,6 +3,24 @@ import Base from '../layouts/Base.astro';
 import { href } from '../components/tokens';
 const base = import.meta.env.BASE_URL;
 const img = (f: string) => `${base}assets/${f}`;
+
+// FUME (WACV 2026) Table 1 — multi-gas segmentation, selected metrics.
+// acc = classification accuracy; iou/dice = segmentation; hd95/asd = boundary
+// (lower is better); params (M) & fps = efficiency.
+const fumeRows = [
+  { m: 'BiSeNetV2',      acc: '99.04', iou: '75.91', dice: '85.85', hd: '72.13',  asd: '20.89', p: '2.77',  fps: '282.49' },
+  { m: 'ENet',           acc: '97.86', iou: '46.67', dice: '54.13', hd: '101.16', asd: '34.24', p: '0.26',  fps: '369.00' },
+  { m: 'DDRNetSlim',     acc: '94.98', iou: '56.97', dice: '70.55', hd: '140.50', asd: '46.13', p: '3.39',  fps: '602.41' },
+  { m: 'ESPNetV2',       acc: '90.81', iou: '51.88', dice: '58.00', hd: '92.32',  asd: '26.55', p: '2.22',  fps: '387.60' },
+  { m: 'DANet',          acc: '48.50', iou: '47.23', dice: '54.49', hd: '103.85', asd: '34.65', p: '1.43',  fps: '334.45' },
+  { m: 'RTFNet',         acc: '46.47', iou: '48.56', dice: '55.55', hd: '107.90', asd: '33.22', p: '35.01', fps: '257.73' },
+  { m: 'MTINet',         acc: '46.37', iou: '44.53', dice: '52.27', hd: '113.11', asd: '39.20', p: '1.80',  fps: '314.47' },
+  { m: 'CMX',            acc: '33.65', iou: '26.69', dice: '29.64', hd: '187.34', asd: '61.28', p: '4.41',  fps: '505.05' },
+  { m: 'Gasformer',      acc: '89.56', iou: '62.09', dice: '74.31', hd: '42.51',  asd: '10.56', p: '3.65',  fps: '177.50' },
+  { m: 'GasTwinFormer',  acc: '86.27', iou: '47.80', dice: '55.77', hd: '47.77',  asd: '14.18', p: '3.35',  fps: '158.20' },
+  { m: 'CarboFormer',    acc: '87.92', iou: '54.95', dice: '65.04', hd: '41.14',  asd: '10.37', p: '3.81',  fps: '107.40' },
+];
+const fume = { acc: '98.82', iou: '80.99', dice: '89.23', hd: '46.58', asd: '14.00', p: '1.28', fps: '326.80' };
 ---
 <Base title={'Research · SARA·Detect'} active="research">
   <!-- ===================== PAGE HEADER ===================== -->
@@ -189,5 +207,54 @@ const img = (f: string) => `${base}assets/${f}`;
         </table>
       </div>
       <div style="font-family:'JetBrains Mono',monospace; font-size: 11.5px; color: #9a8f86; margin-top: 16px;">Source: Islam et&nbsp;al., “CarboFormer,” ISVC 2025. Pre-trained on controlled CO₂ release → fine-tuned on real cattle data.</div>
+    </section>
+
+    <!-- ===================== FUME BENCHMARK TABLE ===================== -->
+    <section style="max-width: 1200px; margin: 0 auto; padding: 0 40px 96px;">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #9a1b2a; font-weight: 600; margin-bottom: 16px;">Benchmark · Multi-Gas</div>
+      <h2 style="font-family: 'Spectral', serif; font-weight: 700; font-size: 34px; line-height: 1.12; color: #1a1614; margin: 0 0 10px; letter-spacing: -0.01em;">FUME vs. the field</h2>
+      <p style="font-size: 16px; line-height: 1.6; color: #56504b; margin: 0 0 36px; max-width: 680px;">Joint CO₂ + methane segmentation, evaluated against efficient and OGI-specific models. Metrics are averaged across both gas modalities (three classes each). The <strong style="color:#6e0f1a;">FUME</strong> row is highlighted.</p>
+
+      <div class="tscroll" style="border: 1px solid #e7e3dd; border-radius: 14px; overflow: hidden;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 13.5px;">
+          <thead>
+            <tr style="background: #1a1614; color: #f4ede9; font-family:'JetBrains Mono',monospace; font-size: 11.5px; letter-spacing: 0.03em;">
+              <th style="text-align: left; padding: 15px 20px; font-weight: 500;">Model</th>
+              <th style="text-align: right; padding: 15px 14px; font-weight: 500;">Acc&nbsp;%</th>
+              <th style="text-align: right; padding: 15px 14px; font-weight: 500;">mIoU&nbsp;%</th>
+              <th style="text-align: right; padding: 15px 14px; font-weight: 500;">Dice&nbsp;%</th>
+              <th style="text-align: right; padding: 15px 14px; font-weight: 500;">HD95&nbsp;↓</th>
+              <th style="text-align: right; padding: 15px 14px; font-weight: 500;">ASD&nbsp;↓</th>
+              <th style="text-align: right; padding: 15px 14px; font-weight: 500;">Params&nbsp;M</th>
+              <th style="text-align: right; padding: 15px 20px; font-weight: 500;">FPS</th>
+            </tr>
+          </thead>
+          <tbody style="font-family:'JetBrains Mono',monospace;">
+            {fumeRows.map((r, i) => (
+              <tr style={`border-bottom: 1px solid #eceae6;${i % 2 === 1 ? ' background:#faf9f7;' : ''}`}>
+                <td style="padding: 12px 20px; font-family:'Libre Franklin',sans-serif; color:#1a1614;">{r.m}</td>
+                <td style="text-align:right; padding:12px 14px; color:#6b635c;">{r.acc}</td>
+                <td style="text-align:right; padding:12px 14px; color:#6b635c;">{r.iou}</td>
+                <td style="text-align:right; padding:12px 14px; color:#6b635c;">{r.dice}</td>
+                <td style="text-align:right; padding:12px 14px; color:#6b635c;">{r.hd}</td>
+                <td style="text-align:right; padding:12px 14px; color:#6b635c;">{r.asd}</td>
+                <td style="text-align:right; padding:12px 14px; color:#6b635c;">{r.p}</td>
+                <td style="text-align:right; padding:12px 20px; color:#6b635c;">{r.fps}</td>
+              </tr>
+            ))}
+            <tr style="background: #f7ecec; border-top: 2px solid #6e0f1a;">
+              <td style="padding: 15px 20px; font-family:'Libre Franklin',sans-serif; font-weight:700; color:#6e0f1a;">FUME <span style="font-weight:500; font-size:12px;">(Ours)</span></td>
+              <td style="text-align:right; padding:15px 14px; color:#6e0f1a; font-weight:700;">{fume.acc}</td>
+              <td style="text-align:right; padding:15px 14px; color:#6e0f1a; font-weight:700;">{fume.iou}</td>
+              <td style="text-align:right; padding:15px 14px; color:#6e0f1a; font-weight:700;">{fume.dice}</td>
+              <td style="text-align:right; padding:15px 14px; color:#6e0f1a; font-weight:700;">{fume.hd}</td>
+              <td style="text-align:right; padding:15px 14px; color:#6e0f1a; font-weight:700;">{fume.asd}</td>
+              <td style="text-align:right; padding:15px 14px; color:#6e0f1a; font-weight:700;">{fume.p}</td>
+              <td style="text-align:right; padding:15px 20px; color:#6e0f1a; font-weight:700;">{fume.fps}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size: 11.5px; color: #9a8f86; margin-top: 16px;">Source: Islam et&nbsp;al., “FUME,” WACV 2026 Workshops (HARVEST-Vision), Table&nbsp;1 (selected metrics). HD95 / ASD in pixels; ↓ lower is better.</div>
     </section>
 </Base>
