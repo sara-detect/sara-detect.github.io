@@ -30,8 +30,28 @@ html, body { overflow-x: hidden; }
   [style*="display: grid"],
   [style*="display:grid"] {
     grid-template-columns: 1fr !important;
-    gap: 18px !important;
+    gap: 12px !important;
   }
+
+  /* concise mobile: trim the big desktop padding inside cards/cells so
+     stacked sections don't become excessively tall */
+  [style*="padding: 34px 28px"],
+  [style*="padding: 32px 28px"],
+  [style*="padding: 30px 28px"],
+  [style*="padding: 38px 40px"],
+  [style*="padding: 36px 38px"],
+  [style*="padding: 36px"],
+  [style*="padding: 32px"],
+  [style*="padding: 28px 24px"],
+  [style*="padding: 22px 24px"],
+  [style*="padding: 26px 28px 30px"],
+  [style*="padding: 24px 24px 28px"] {
+    padding: 22px 20px !important;
+  }
+
+  /* trim the gap between a section heading block and its content */
+  [style*="margin-bottom: 52px"],
+  [style*="margin-bottom: 44px"] { margin-bottom: 26px !important; }
 
   /* shrink the 40px side padding on the centered max-width containers */
   [style*="1200px"], [style*="1100px"], [style*="1080px"], [style*="1000px"] {
@@ -95,8 +115,8 @@ html, body { overflow-x: hidden; }
 
   /* ---- tighter vertical rhythm: less empty space between sections ---- */
   [style*="1200px"], [style*="1100px"], [style*="1080px"], [style*="1000px"] {
-    padding-top: 54px !important;
-    padding-bottom: 54px !important;
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
   }
   /* hero image: shorter so it isn't a giant block above the fold */
   [style*="min-height: 520px"] { min-height: 320px !important; }
