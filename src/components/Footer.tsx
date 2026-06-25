@@ -11,10 +11,10 @@ export default function Footer() {
               <div style={{ fontFamily: serif, fontWeight: 600, fontSize: 18, color: '#f4ede9' }}>SARA·Detect</div>
             </div>
             <p style={{ fontSize: 14.5, lineHeight: 1.6, color: '#9a8f86', margin: '0 0 18px', maxWidth: 360 }}>Detecting subacute ruminal acidosis with real-time deep learning and optical gas imaging — a collaboration between Animal Science and the School of Computing at SIU Carbondale.</p>
-            <div style={{ fontFamily: mono, fontSize: 11, color: '#6e5f57', letterSpacing: '0.06em' }}>USDA-NIFA · GRANT 2023-70001-40997</div>
+            <div style={{ fontFamily: mono, fontSize: 11, color: '#8d8075', letterSpacing: '0.06em' }}>USDA-NIFA · GRANT 2023-70001-40997</div>
           </div>
           <div>
-            <div style={{ fontFamily: mono, fontSize: 11, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#6e5f57', marginBottom: 18 }}>Explore</div>
+            <div style={{ fontFamily: mono, fontSize: 11, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#8d8075', marginBottom: 18 }}>Explore</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12, fontSize: 14.5 }}>
               {NAV.map((item) => (
                 <a key={item.key} className="flink" href={href(item.route)} style={{ color: '#c9beb6' }}>{item.label}</a>
@@ -22,7 +22,7 @@ export default function Footer() {
             </div>
           </div>
           <div>
-            <div style={{ fontFamily: mono, fontSize: 11, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#6e5f57', marginBottom: 18 }}>Contact &amp; Links</div>
+            <div style={{ fontFamily: mono, fontSize: 11, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#8d8075', marginBottom: 18 }}>Contact &amp; Links</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12, fontSize: 14.5 }}>
               <a className="flink" href="mailto:aabugha@siu.edu" style={{ color: '#c9beb6' }}>aabugha@siu.edu</a>
               <a className="flink" href="mailto:khaled.ahmed@siu.edu" style={{ color: '#c9beb6' }}>khaled.ahmed@siu.edu</a>
@@ -32,7 +32,7 @@ export default function Footer() {
           </div>
         </div>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '22px 0 26px', flexWrap: 'wrap', gap: 12 }}>
-          <div style={{ fontFamily: mono, fontSize: 11, color: '#6e5f57' }}>© 2026 Southern Illinois University Carbondale · All rights reserved</div>
+          <div style={{ fontFamily: mono, fontSize: 11, color: '#8d8075' }}>© 2026 Southern Illinois University Carbondale · All rights reserved</div>
           <div style={{ height: 5, width: 200, background: 'linear-gradient(90deg,#1a0a2e,#5b1670,#b1267a,#e8590c,#f9c80e)', borderRadius: 3 }} />
         </div>
       </div>

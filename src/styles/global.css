@@ -1,7 +1,45 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; background: #ffffff; }
+body {
+  margin: 0;
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
 a { text-decoration: none; color: inherit; }
+
+/* even line breaks on headings, fewer orphans in prose */
+h1, h2, h3 { text-wrap: balance; }
+p { text-wrap: pretty; }
+
+/* selection picks up the brand oxblood */
+::selection { background: #6e0f1a; color: #ffffff; }
+
+/* interactive elements ease rather than snap */
+a, button {
+  transition: color 0.18s ease, background-color 0.18s ease,
+    border-color 0.2s ease;
+}
+
+/* accessible keyboard focus (mouse clicks stay clean via :focus-visible) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+label.nav-burger:focus-within {
+  outline: 2px solid #6e0f1a;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
 
 /* hover states (ported from the .dc.html design template) */
 .navlink:hover { color: #6e0f1a; }

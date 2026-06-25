@@ -9,7 +9,7 @@ export const c = {
   maroon2: '#9a1b2a',
   ink: '#1a1614',
   body: '#56504b',
-  muted: '#847a72',
+  muted: '#6f655c',
   line: '#e7e3dd',
   cream: '#f7f5f2',
   gold: '#f9c80e',
