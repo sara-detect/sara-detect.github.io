@@ -10,6 +10,7 @@ type Member = {
   department: string;
   institution: string;
   email: string;
+  website?: string;
   expertise: string[];
   description: string;
   education: string;
@@ -37,6 +38,7 @@ const team: Member[] = [
     department: 'School of Computing',
     institution: 'Southern Illinois University Carbondale',
     email: 'khaled.ahmed@siu.edu',
+    website: 'https://k-ahmed.com/',
     expertise: ['Computer Vision', 'Machine Learning', 'Deep Learning', 'Software Engineering', 'Distributed Systems', 'Parallel Computing', 'Big Data', 'Intelligent Transport Systems'],
     description: 'Dr. Ahmed leads the AI and computer vision aspects of the project, focusing on developing advanced deep learning models for gas detection and quantification. With over 19 years of experience in academia, research, and industry, he previously served as Associate Professor at King Faisal University and was a postdoctoral researcher at University of Tokyo, Japan. He has authored 69 publications and edited four books, serving as PI and Co-PI on 11 funded research projects including three current federal/state research funds.',
     education: 'Ph.D. in Computer Science',
@@ -49,6 +51,7 @@ const team: Member[] = [
     department: 'University of California, Davis',
     institution: 'Formerly: Southern Illinois University Carbondale',
     email: 'membaby@ucdavis.edu',
+    website: 'https://embabylab.com/',
     expertise: ['Animal Nutrition', 'Gas Chromatography', 'In Vitro Fermentation', 'Statistical Analysis', 'Remote Sensing', 'GIS', 'Environmental Sciences', 'Dairy Cattle Production'],
     description: "Dr. Embaby contributed expertise in experimental design, laboratory analysis, and data interpretation for the agricultural and nutritional aspects of the research during his time at SIU. He has over 8 years of research experience, previously serving as Research Assistant at the National Research Centre in Egypt's Dairy Cattle Production Department, and has background in statistics and geoinformation systems. He is now continuing his postdoctoral research at UC Davis.",
     education: 'Ph.D. in Agricultural Sciences, Southern Illinois University Carbondale (2018-2024); M.Sc. in Animal Science, Southern Illinois University Carbondale (2016-2018); Master of the Mediterranean Agronomic Institute of Chania (2013-2014)',
@@ -61,6 +64,7 @@ const team: Member[] = [
     department: 'School of Computing',
     institution: 'Southern Illinois University Carbondale',
     email: 'taminul.islam@siu.edu',
+    website: 'https://taminul.com',
     expertise: ['Computer Vision', 'Deep Learning', 'Semantic Segmentation', 'Object Detection/Tracking', 'Natural Language Processing', 'Healthcare AI', 'Agricultural AI', 'Cybersecurity'],
     description: 'Taminul Islam is a doctoral student in Computer Science at Southern Illinois University Carbondale, currently serving as a Research Assistant at the BASE: Bridging AI, Systems, and Environment Research lab. His research focuses on developing innovative artificial intelligence and computer vision solutions for agriculture, environmental monitoring, and food safety applications. He specializes in advanced deep learning techniques including semantic segmentation, object detection, and tracking systems that address real-world challenges in precision agriculture and sustainable food production.',
     education: 'Ph.D. in Computer Science, Southern Illinois University Carbondale (Present); B.Sc. in Computer Science and Engineering, Daffodil International University, Bangladesh',
@@ -73,6 +77,7 @@ const team: Member[] = [
     department: 'School of Computing',
     institution: 'Southern Illinois University Carbondale',
     email: 'toqitahamid.sarker@siu.edu',
+    website: 'https://toqitahamid.com',
     expertise: ['Computer Vision', 'Semantic Segmentation', 'Object Detection/Tracking', 'Transformer Architectures', 'Deep Learning', 'PyTorch'],
     description: 'Toqi is a third-year PhD student in Computer Science, focusing on developing the computer vision architecture and advancing AI techniques for environmental monitoring applications and precision agriculture.',
     education: 'Ph.D. in Computer Science, Southern Illinois University Carbondale (Present); B.Sc. in Computer Science and Engineering, BRAC University, Bangladesh (2012-2016)',
@@ -127,7 +132,12 @@ const team: Member[] = [
               </div>
             </div>
 
-            <a class="maroonlink" href={`mailto:${m.email}`} style="font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: #6e0f1a; border-bottom: 1px solid #d8b3b0; padding-bottom: 2px;">{m.email}</a>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px 20px; align-items: center;">
+              <a class="maroonlink" href={`mailto:${m.email}`} style="font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: #6e0f1a; border-bottom: 1px solid #d8b3b0; padding-bottom: 2px;">{m.email}</a>
+              {m.website && (
+                <a class="maroonlink" href={m.website} target="_blank" rel="noopener" style="font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: #6e0f1a; border-bottom: 1px solid #d8b3b0; padding-bottom: 2px;">{m.website.replace(/^https?:\/\//, '').replace(/\/$/, '')} ↗</a>
+              )}
+            </div>
           </div>
         </div>
       ))}
